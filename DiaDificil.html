@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Estrelas twinkling */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* Lua */
+        .moon {
+            position: fixed;
+            top: 30px;
+            right: 50px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), 0 0 80px rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
+        
+        .moon::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 15px;
+            height: 15px;
+            background: rgba(200, 200, 200, 0.3);
+            border-radius: 50%;
+        }
+        
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            width: 25px;
+            height: 25px;
+            background: rgba(200, 200, 200, 0.3);
+            border-radius: 50%;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            background: linear-gradient(45deg, #ff6b6b, #ffc3a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        .heart {
+            font-size: 2.5em;
+            text-align: center;
+            margin: 20px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+        }
+        
+        .emoji-row {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        
+        /* Ornamentos */
+        .card::before {
+            content: '✦';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5em;
+        }
+        
+        .card::after {
+            content: '✦';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Estrelas geradas via JS -->
+    <div class="stars" id="stars"></div>
+    
+    <div class="moon"></div>
+    
+    <div class="card">
+        <h1>❤️ Para a minha princesa ❤️</h1>
+        
+        <p>Oi, meu anjo. </p>
+        
+        <p>Sei que ultimamente as coisas estão difíceis, e meus pais estão querendo nos afastar. Mas eu preciso te dizer algo importantíssimo: eu não quero perder você.</p>
+        
+        <p>Você é a pessoa mais incrível que já entrou na minha vida. Quando eu te conheci, eu estava tão sozinho e triste... Você me mostrou que ainda havia amor e felicidade no mundo. Você me cuidou de uma forma que ninguém nunca tinha cuidado.</p>
+        
+        <p>Lembra de todas as nossas ligações? Ficamos bem próximos por essas ligações só conversando, jogando, fazendo desenhos, dando risada de coisas bobas, ainda mais daquelas horas rs... Esses momentos são os melhores da minha vida.</p>
+        
+        <p>Eu amo quando você fala sobre as coisas que você gosta, amo quando você fala sobre qualquer coisa. Amo sua voz, amo tudo em você.</p>
+        
+        <p>Eu sei que a situação não é fácil. Eu sei que tem gente que não entende o quanto nós nos amamos. Mas eu acredito em nós. Eu quero estar ao seu lado, te apoiando, cuidando de você.</p>
+        
+        <p>Você é tudo que eu tenho. Se eu perder você, eu perco tudo. Eu não quero nem pensar nisso.</p>
+        
+        <p>Obrigado por fazer parte da minha vida! Eu sou totalmente grato por isso.</p>
+        
+        <p>Eu te amo tanto. ❤️</p>
+        
+        <div class="emoji-row">🖐🏼🫶🏼🫵🏼</div>
+        
+        <div class="heart">💖</div>
+        
+        <p class="signature">Com todo o meu amor,<br>Seu Cabeção 💖</p>
+    </div>
+    
+    <script>
+        // Gerar estrelas aleatórias
+        const starsContainer = document.getElementById('stars');
+        const starCount = 100;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
